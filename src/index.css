@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Cabinet Grotesk", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Raxxer BI / Cyber Slate & Deep Blue Official Design Tokens */
+  --color-canvas-bg: #060A12;
+  --color-sidebar-bg: #080E1A;
+  --color-card-bg: #0B1323;
+  --color-card-hover: #101B30;
+
+  --color-border-default: #16243F;
+  --color-border-glow: #1D68FF;
+  --color-border-subtle: #16243F;
+  --color-border-medium: #1E335A;
+
+  --color-brand-primary: #1D68FF;
+  --color-brand-secondary: #0099FF;
+  --color-brand-cyan: #00C7F2;
+  --color-brand-cyan-light: #38BDF8;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8E9DB8;
+  --color-text-muted: #4B5A75;
+
+  --color-semantic-success: #10B981;
+  --color-semantic-warning: #F59E0B;
+  --color-semantic-danger: #EF4444;
+  --color-semantic-info: #00C7F2;
+}
+
+/* CSS Variables strictly rooted in Deep Navy Blue & Cyber Slate */
+:root, .dark {
+  --merlin-bg: #060A12;
+  --merlin-sidebar: #080E1A;
+  --merlin-header: #080E1A;
+  --merlin-surface: #0B1323;
+  --merlin-surface-raised: #101B30;
+  --merlin-surface-glass: rgba(11, 19, 35, 0.95);
+  --merlin-border: #16243F;
+  --merlin-border-subtle: #16243F;
+  --merlin-border-highlight: #1D68FF;
+  --merlin-border-glow: rgba(29, 104, 255, 0.25);
+
+  --merlin-text-primary: #FFFFFF;
+  --merlin-text-secondary: #8E9DB8;
+  --merlin-text-muted: #4B5A75;
+
+  /* Accent & Electric Blue / Cyan Identity */
+  --merlin-accent-blue: #1D68FF;
+  --merlin-accent-cyan: #00C7F2;
+  --merlin-accent-gradient: linear-gradient(90deg, #1D68FF 0%, #0099FF 100%);
+  --merlin-ai-glow: rgba(29, 104, 255, 0.25);
+
+  /* Semantic Status tokens */
+  --merlin-urgency: #EF4444;
+  --merlin-urgency-bg: rgba(239, 68, 68, 0.12);
+  --merlin-urgency-border: rgba(239, 68, 68, 0.25);
+
+  --merlin-warning: #F59E0B;
+  --merlin-warning-bg: rgba(245, 158, 11, 0.12);
+  --merlin-warning-border: rgba(245, 158, 11, 0.25);
+
+  --merlin-success: #10B981;
+  --merlin-success-bg: rgba(16, 185, 129, 0.12);
+  --merlin-success-border: rgba(16, 185, 129, 0.25);
+
+  --merlin-info: #00C7F2;
+  --merlin-info-bg: rgba(0, 199, 242, 0.12);
+  --merlin-info-border: rgba(0, 199, 242, 0.25);
+}
+
+/* Custom smooth dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16243F;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1E335A;
+}
+
+/* Base Body Style */
+body {
+  background-color: var(--merlin-bg);
+  color: var(--merlin-text-primary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+/* Discrete Futuristic Deep Navy SaaS Design Tokens */
+
+/* Controlled Glassmorphism */
+.merlin-glass {
+  background: var(--merlin-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--merlin-border);
+}
+
+/* Standard Card Container */
+.merlin-card {
+  background-color: #0B1323;
+  border: 1px solid #16243F;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Interactive Card with Micro-Elevation & Blue Glow */
+.merlin-card-hover {
+  background-color: #0B1323;
+  border: 1px solid #16243F;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.merlin-card-hover:hover {
+  background-color: #101B30;
+  border-color: #1D68FF;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* AI Copilot Accents */
+.merlin-ai-pill {
+  background: rgba(29, 104, 255, 0.12);
+  border: 1px solid rgba(29, 104, 255, 0.3);
+  color: #00C7F2;
+}
+
+.merlin-ai-border {
+  border: 1px solid #1D68FF;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+}
+
+/* Primary Action Button (Gradiente Horizontal #1D68FF -> #0099FF, texto branco, font-weight 600, border-radius 10px) */
+.merlin-btn-primary {
+  background: linear-gradient(90deg, #1D68FF 0%, #0099FF 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+  transition: all 0.15s ease;
+}
+
+.merlin-btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 16px rgba(29, 104, 255, 0.35);
+  transform: translateY(-0.5px);
+}
+
+.merlin-btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Secondary / Outline Button (Fundo transparente, borda 1px solid #1D68FF, texto #00C7F2, border-radius 10px) */
+.merlin-btn-secondary {
+  background: transparent;
+  border: 1px solid #1D68FF;
+  color: #00C7F2;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.15s ease;
+}
+
+.merlin-btn-secondary:hover {
+  background-color: rgba(29, 104, 255, 0.12);
+  border-color: #1D68FF;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+}
+
+/* Input Fields (Fundo #080E1A, borda #16243F, foco borda #1D68FF + glow, border-radius 10px) */
+.merlin-input {
+  background-color: #080E1A;
+  border: 1px solid #16243F;
+  color: #FFFFFF;
+  border-radius: 10px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.merlin-input:focus {
+  outline: none;
+  border-color: #1D68FF;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+}
+
+/* Unified Shortcuts System */
+.merlin-shortcut-card {
+  background-color: #0B1323;
+  border: 1px solid #16243F;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.merlin-shortcut-card:hover {
+  background-color: #101B30;
+  border-color: #1D68FF;
+  box-shadow: 0 0 12px rgba(29, 104, 255, 0.25);
+}
+
+.merlin-shortcut-icon {
+  background-color: rgba(29, 104, 255, 0.12);
+  color: #00C7F2;
+  border-radius: 12px;
+}
+
+.merlin-shortcut-badge {
+  background-color: #101C33;
+  border: 1px solid #1E335A;
+  color: #38BDF8;
+  border-radius: 9999px;
+}
+
+/* Semantic Badges */
+.merlin-badge-cyan {
+  background-color: rgba(0, 199, 242, 0.12);
+  color: #00C7F2;
+  border: 1px solid rgba(0, 199, 242, 0.25);
+}
+
+.merlin-badge-amber {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.merlin-badge-emerald {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.merlin-badge-danger {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Mobile Touch Support */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
